@@ -3,10 +3,10 @@ import { client } from 'graphql/client'
 import { GetCharactersQuery } from 'graphql/generated/graphql'
 import { GET_CHARACTERS } from 'graphql/queries'
 
-import Main from '../components/Main'
+import HomeTemplate from 'templates/Home'
 
 export default function Home() {
-  return <Main />
+  return <HomeTemplate />
 }
 
 export const getStaticProps = async () => {
