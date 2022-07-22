@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
 export const Wrapper = styled.div``
@@ -9,7 +10,7 @@ export const Container = styled.main`
   padding: 1.25rem;
 `
 
-export const Grid = styled.div`
+export const Grid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
