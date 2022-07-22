@@ -6,9 +6,6 @@ export const GET_CHARACTERS = gql`
       name
       image
       species
-      location {
-        name
-      }
     }
   }
 

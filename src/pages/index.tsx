@@ -1,12 +1,13 @@
 import { client } from 'graphql/client'
-
-import { GetCharactersQuery } from 'graphql/generated/graphql'
 import { GET_CHARACTERS } from 'graphql/queries'
+
+import { HomeProps } from 'types/home'
+import { GetCharactersQuery } from 'graphql/generated/graphql'
 
 import HomeTemplate from 'templates/Home'
 
-export default function Home() {
-  return <HomeTemplate />
+export default function Home({ characters }: HomeProps) {
+  return <HomeTemplate characters={characters} />
 }
 
 export const getStaticProps = async () => {
@@ -15,6 +16,7 @@ export const getStaticProps = async () => {
   )
 
   return {
+    revalidate: 60,
     props: {
       characters: characters?.results
     }
